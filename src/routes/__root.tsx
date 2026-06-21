@@ -77,14 +77,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
+      { title: "GitHub" },
+      { name: "description", content: "Manisha R's Cyber Nexus is a personal portfolio website showcasing her skills in cybersecurity, Java development, and full-stack aspirations." },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { property: "og:title", content: "GitHub" },
+      { property: "og:description", content: "Manisha R's Cyber Nexus is a personal portfolio website showcasing her skills in cybersecurity, Java development, and full-stack aspirations." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "GitHub" },
+      { name: "twitter:description", content: "Manisha R's Cyber Nexus is a personal portfolio website showcasing her skills in cybersecurity, Java development, and full-stack aspirations." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/fe85532b-9a26-4827-bbc9-b9b21856d913/id-preview-cdac4354--424b3487-2fac-414f-9478-7febec3bb9c9.lovable.app-1782026304166.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/fe85532b-9a26-4827-bbc9-b9b21856d913/id-preview-cdac4354--424b3487-2fac-414f-9478-7febec3bb9c9.lovable.app-1782026304166.png" },
     ],
     links: [
       {
