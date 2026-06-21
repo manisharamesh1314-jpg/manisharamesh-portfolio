@@ -6,6 +6,10 @@ import {
   Mail,
   Download,
   ArrowRight,
+  Calendar,
+  Users,
+  Rocket,
+  TrendingUp,
   Shield,
   BrainCircuit,
   Cloud,
@@ -476,26 +480,163 @@ function ProjectCard({
 
 /* ---------- Achievements ---------- */
 function Achievements() {
-  const items = [
-    { icon: <Trophy className="h-5 w-5" />, title: "First Prize", body: "Technical Paper Presentation" },
-    { icon: <Award className="h-5 w-5" />, title: "National Hackathon", body: "National Level Participant" },
-    { icon: <BrainCircuit className="h-5 w-5" />, title: "Generative AI", body: "Technical Paper Presenter" },
-    { icon: <Sparkles className="h-5 w-5" />, title: "Technical Symposium", body: "Participant" },
-    { icon: <Eye className="h-5 w-5" />, title: "Google Workshop", body: "Data Science Workshop Participant" },
+  const items: {
+    icon: React.ReactNode;
+    title: string;
+    date: string;
+    location: string;
+    description: string;
+    badge: string;
+    accent: "blue" | "purple" | "cyan";
+  }[] = [
+    {
+      icon: <Trophy className="h-5 w-5" />,
+      title: "First Prize — Technical Paper Presentation",
+      date: "2025",
+      location: "Sengunthar Engineering College, Tamil Nadu",
+      description:
+        "Secured First Prize in a Technical Paper Presentation competition, demonstrating strong technical knowledge, research abilities, and presentation skills.",
+      badge: "Winner",
+      accent: "purple",
+    },
+    {
+      icon: <BrainCircuit className="h-5 w-5" />,
+      title: "Generative AI Paper Presentation — SARAYU-2K25",
+      date: "25–26 September 2025",
+      location: "Rover Engineering College, Tamil Nadu",
+      description:
+        "Presented a technical paper on Generative AI at the National Level Technical Symposium SARAYU-2K25, showcasing emerging AI technologies and applications.",
+      badge: "National Symposium",
+      accent: "blue",
+    },
+    {
+      icon: <Sparkles className="h-5 w-5" />,
+      title: "Cyberia-2K25 National Level Technical Symposium",
+      date: "18 September 2025",
+      location: "Rover Engineering College, Tamil Nadu",
+      description:
+        "Competed in technical events including TecScribe, BrandHunt, and MemeCraft — enhancing creativity, communication, and problem-solving skills.",
+      badge: "Participant",
+      accent: "cyan",
+    },
+    {
+      icon: <Award className="h-5 w-5" />,
+      title: "SAWIT AI Learnathon — GUVI",
+      date: "21–22 September 2024",
+      location: "Organized by GUVI",
+      description:
+        "Successfully completed the SAWIT AI Learnathon, gaining practical exposure to Artificial Intelligence concepts, tools, and real-world applications.",
+      badge: "Completed",
+      accent: "purple",
+    },
+    {
+      icon: <Eye className="h-5 w-5" />,
+      title: "Data Science Decoded Workshop by Google",
+      date: "12–13 April 2025",
+      location: "Madras Institute of Technology (Anna University), Chennai",
+      description:
+        "Attended Google's Data Science Decoded workshop during Samhita'25, exploring modern data science techniques, analytics, and industry applications.",
+      badge: "Google Workshop",
+      accent: "blue",
+    },
+    {
+      icon: <Rocket className="h-5 w-5" />,
+      title: "National Level Hackathon — Password Strength Evaluator",
+      date: "2025",
+      location: "Nandha College of Technology, Tamil Nadu",
+      description:
+        "Built a Password Strength Evaluator (HTML/CSS/JS) in a 3-hour hackathon — analyzing password complexity with real-time security feedback to promote cybersecurity awareness.",
+      badge: "Hackathon",
+      accent: "cyan",
+    },
+    {
+      icon: <TrendingUp className="h-5 w-5" />,
+      title: "Technical Growth & Continuous Learning",
+      date: "2024 — Present",
+      location: "Across symposiums, hackathons & workshops",
+      description:
+        "Actively participating in hackathons, symposiums, workshops, and project development — strengthening cybersecurity, web development, teamwork, innovation, leadership, and technical communication.",
+      badge: "Ongoing",
+      accent: "purple",
+    },
   ];
+
+  const accentMap = {
+    blue: "from-[var(--neon-blue)] to-[var(--neon-cyan)]",
+    purple: "from-[var(--neon-purple)] to-[var(--neon-blue)]",
+    cyan: "from-[var(--neon-cyan)] to-[var(--neon-purple)]",
+  } as const;
+  const glowMap = {
+    blue: "bg-[var(--neon-blue)]/25",
+    purple: "bg-[var(--neon-purple)]/25",
+    cyan: "bg-[var(--neon-cyan)]/25",
+  } as const;
+
   return (
-    <Section id="achievements" eyebrow="05 — Recognition" title="Achievements">
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {items.map((it) => (
-          <div key={it.title} className="group relative overflow-hidden rounded-2xl glass p-5 transition hover:-translate-y-1">
-            <div className="absolute -top-10 -right-10 h-32 w-32 rounded-full bg-[var(--neon-purple)]/20 blur-2xl opacity-0 transition group-hover:opacity-100" />
-            <div className="grid h-11 w-11 place-items-center rounded-xl bg-gradient-to-br from-[var(--neon-blue)] to-[var(--neon-purple)] text-background">
-              {it.icon}
-            </div>
-            <h3 className="mt-4 font-display text-lg font-semibold">{it.title}</h3>
-            <p className="mt-1 text-sm text-muted-foreground">{it.body}</p>
-          </div>
-        ))}
+    <Section id="achievements" eyebrow="05 — Recognition" title="Achievements & Activities">
+      <div className="relative mx-auto max-w-5xl">
+        {/* Vertical timeline rail */}
+        <div className="pointer-events-none absolute left-5 top-2 bottom-2 w-px bg-gradient-to-b from-[var(--neon-blue)] via-[var(--neon-purple)] to-transparent md:left-1/2 md:-translate-x-1/2" />
+
+        <ol className="space-y-8">
+          {items.map((it, i) => {
+            const onRight = i % 2 === 1;
+            return (
+              <li
+                key={it.title}
+                className="relative grid md:grid-cols-2 md:gap-10"
+              >
+                {/* Timeline node */}
+                <span
+                  className={`absolute left-5 top-6 z-10 grid h-3 w-3 -translate-x-1/2 place-items-center rounded-full bg-gradient-to-br ${accentMap[it.accent]} shadow-[0_0_14px_var(--neon-purple)] md:left-1/2`}
+                >
+                  <span className="absolute h-3 w-3 animate-ping rounded-full bg-white/30" />
+                </span>
+
+                <div className={`${onRight ? "md:col-start-2" : "md:col-start-1"} pl-12 md:pl-0`}>
+                  <article
+                    className={`group relative overflow-hidden rounded-2xl glass p-5 transition duration-300 hover:-translate-y-1 hover:border-white/25 hover:shadow-[0_20px_60px_-20px_var(--neon-purple)] ${onRight ? "md:ml-6" : "md:mr-6"}`}
+                  >
+                    {/* Hover glow */}
+                    <div
+                      className={`pointer-events-none absolute -top-16 ${onRight ? "-left-16" : "-right-16"} h-44 w-44 rounded-full ${glowMap[it.accent]} blur-3xl opacity-0 transition duration-500 group-hover:opacity-100`}
+                    />
+
+                    <div className="flex items-start justify-between gap-3">
+                      <div
+                        className={`grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-gradient-to-br ${accentMap[it.accent]} text-background shadow-[0_8px_24px_-8px_var(--neon-purple)] transition group-hover:scale-110`}
+                      >
+                        {it.icon}
+                      </div>
+                      <span className="rounded-full border border-white/15 bg-white/[0.06] px-2.5 py-1 text-[0.65rem] uppercase tracking-[0.18em] text-[var(--neon-cyan)]">
+                        {it.badge}
+                      </span>
+                    </div>
+
+                    <h3 className="mt-4 font-display text-lg font-semibold leading-snug text-foreground">
+                      {it.title}
+                    </h3>
+
+                    <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-muted-foreground">
+                      <span className="inline-flex items-center gap-1.5">
+                        <Calendar className="h-3.5 w-3.5 text-[var(--neon-cyan)]" />
+                        {it.date}
+                      </span>
+                      <span className="inline-flex items-center gap-1.5">
+                        <MapPin className="h-3.5 w-3.5 text-[var(--neon-purple)]" />
+                        {it.location}
+                      </span>
+                    </div>
+
+                    <p className="mt-3 text-sm leading-relaxed text-foreground/75">
+                      {it.description}
+                    </p>
+                  </article>
+                </div>
+              </li>
+            );
+          })}
+        </ol>
       </div>
     </Section>
   );
