@@ -205,15 +205,14 @@ function SocialIcon({ href, label, children }: { href: string; label: string; ch
 }
 
 function ProfileCard() {
-  const floats = [
-    { label: "Java", icon: <FileCode2 className="h-4 w-4" />, pos: "top-2 -left-4", delay: "0s" },
-    { label: "HTML", icon: <Code2 className="h-4 w-4" />, pos: "top-20 -right-6", delay: "-1s" },
-    { label: "CSS", icon: <Sparkles className="h-4 w-4" />, pos: "top-1/2 -left-10", delay: "-2s" },
-    { label: "JS", icon: <Code2 className="h-4 w-4" />, pos: "bottom-24 -right-8", delay: "-3s" },
-    { label: "GitHub", icon: <Github className="h-4 w-4" />, pos: "bottom-4 -left-6", delay: "-4s" },
-    { label: "Security", icon: <Shield className="h-4 w-4" />, pos: "-top-4 right-10", delay: "-5s" },
-    { label: "AI", icon: <BrainCircuit className="h-4 w-4" />, pos: "bottom-2 right-1/3", delay: "-2.5s" },
-    { label: "Cloud", icon: <Cloud className="h-4 w-4" />, pos: "top-1/3 -right-10", delay: "-1.5s" },
+  // Orbiting skill icons — deterministic positions around the avatar
+  const orbits = [
+    { label: "Java", icon: <FileCode2 className="h-3.5 w-3.5" />, angle: -90 },
+    { label: "Security", icon: <Shield className="h-3.5 w-3.5" />, angle: -30 },
+    { label: "AI", icon: <BrainCircuit className="h-3.5 w-3.5" />, angle: 30 },
+    { label: "JS", icon: <Code2 className="h-3.5 w-3.5" />, angle: 90 },
+    { label: "Cloud", icon: <Cloud className="h-3.5 w-3.5" />, angle: 150 },
+    { label: "Git", icon: <Github className="h-3.5 w-3.5" />, angle: 210 },
   ];
   const stats = [
     { k: "CGPA", v: "8.59" },
@@ -224,18 +223,49 @@ function ProfileCard() {
   return (
     <div className="relative mx-auto w-full max-w-md animate-fade-up" style={{ animationDelay: "0.15s" }}>
       <div className="relative glass-strong rounded-3xl p-6">
-        {/* Animated glowing border ring */}
-        <div className="relative mx-auto h-56 w-56">
-          <div className="absolute inset-0 rounded-full bg-[conic-gradient(from_0deg,var(--neon-blue),var(--neon-purple),var(--neon-cyan),var(--neon-blue))] animate-spin-slow blur-[2px] opacity-90" />
-          <div className="absolute inset-[6px] rounded-full bg-background" />
-          <div className="absolute inset-[10px] overflow-hidden rounded-full animate-pulse-ring">
-            <img
-              src={profileAsset.url}
-              alt="Manisha R — Cybersecurity Engineer & Java Developer"
-              className="h-full w-full object-cover"
-              loading="eager"
-            />
+        {/* Avatar + orbit ring */}
+        <div className="relative mx-auto h-64 w-64 sm:h-72 sm:w-72">
+          {/* Faint orbit ring */}
+          <div className="pointer-events-none absolute inset-3 rounded-full border border-dashed border-white/10" />
+
+          {/* Glowing animated ring around avatar */}
+          <div className="absolute inset-7 sm:inset-8">
+            <div className="absolute inset-0 rounded-full bg-[conic-gradient(from_0deg,var(--neon-blue),var(--neon-purple),var(--neon-cyan),var(--neon-blue))] animate-spin-slow blur-[2px] opacity-90" />
+            <div className="absolute inset-[6px] rounded-full bg-background" />
+            <div className="absolute inset-[10px] overflow-hidden rounded-full animate-pulse-ring">
+              <img
+                src={profileAsset.url}
+                alt="Manisha R — Cybersecurity Engineer & Java Developer"
+                className="h-full w-full object-cover"
+                loading="eager"
+              />
+            </div>
           </div>
+
+          {/* Evenly orbiting skill chips */}
+          {orbits.map((o, i) => {
+            const rad = (o.angle * Math.PI) / 180;
+            // Radius as % of container so it scales with the avatar
+            const r = 48; // ~edge of container
+            const x = 50 + r * Math.cos(rad);
+            const y = 50 + r * Math.sin(rad);
+            return (
+              <div
+                key={o.label}
+                className="absolute -translate-x-1/2 -translate-y-1/2 animate-float"
+                style={{
+                  left: `${x}%`,
+                  top: `${y}%`,
+                  animationDelay: `${-i * 0.6}s`,
+                }}
+              >
+                <div className="flex items-center gap-1.5 rounded-full glass px-2 py-1 text-[0.65rem] font-medium text-foreground/90 shadow-[0_4px_20px_-6px_var(--neon-blue)]">
+                  <span className="text-[var(--neon-cyan)]">{o.icon}</span>
+                  <span className="hidden sm:inline">{o.label}</span>
+                </div>
+              </div>
+            );
+          })}
         </div>
 
         <div className="mt-6 text-center">
@@ -253,20 +283,6 @@ function ProfileCard() {
             </div>
           ))}
         </div>
-
-        {/* Floating icons */}
-        {floats.map((f) => (
-          <div
-            key={f.label}
-            className={`absolute ${f.pos} animate-float`}
-            style={{ animationDelay: f.delay }}
-          >
-            <div className="flex items-center gap-1.5 rounded-full glass px-2.5 py-1.5 text-[0.7rem] font-medium text-foreground/90">
-              <span className="text-[var(--neon-cyan)]">{f.icon}</span>
-              {f.label}
-            </div>
-          </div>
-        ))}
       </div>
     </div>
   );
