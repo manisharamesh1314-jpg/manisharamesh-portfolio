@@ -29,6 +29,7 @@ import {
   FileCode2,
 } from "lucide-react";
 import profileAsset from "@/assets/profile.jpeg.asset.json";
+import resumeAsset from "@/assets/resume.pdf.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -166,12 +167,15 @@ function Hero() {
             >
               <Mail className="h-4 w-4" /> Contact Me
             </a>
-            <button
-              onClick={() => window.print()}
+            <a
+              href={resumeAsset.url}
+              download="Manisha_Ramesh_Resume.pdf"
+              target="_blank"
+              rel="noreferrer"
               className="inline-flex items-center gap-2 rounded-full border border-white/15 px-5 py-3 text-sm font-semibold text-foreground transition hover:border-white/30 hover:bg-white/5"
             >
               <Download className="h-4 w-4" /> Download Resume
-            </button>
+            </a>
           </div>
           <div className="mt-8 flex items-center gap-3">
             <SocialIcon href={GITHUB} label="GitHub"><Github className="h-4 w-4" /></SocialIcon>
