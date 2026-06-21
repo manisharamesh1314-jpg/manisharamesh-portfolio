@@ -7,7 +7,6 @@ import {
   Download,
   ArrowRight,
   Calendar,
-  Users,
   Rocket,
   TrendingUp,
   Shield,
