@@ -25,6 +25,7 @@ import {
   Briefcase,
   FileCode2,
 } from "lucide-react";
+import profileAsset from "@/assets/profile.jpeg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -220,11 +221,13 @@ function ProfileCard() {
         <div className="relative mx-auto h-56 w-56">
           <div className="absolute inset-0 rounded-full bg-[conic-gradient(from_0deg,var(--neon-blue),var(--neon-purple),var(--neon-cyan),var(--neon-blue))] animate-spin-slow blur-[2px] opacity-90" />
           <div className="absolute inset-[6px] rounded-full bg-background" />
-          <div className="absolute inset-[10px] overflow-hidden rounded-full bg-gradient-to-br from-[oklch(0.2_0.08_270)] to-[oklch(0.15_0.06_305)] grid place-items-center animate-pulse-ring">
-            <div className="flex flex-col items-center">
-              <span className="font-display text-6xl font-bold neon-text">MR</span>
-              <span className="mt-1 text-[0.65rem] uppercase tracking-[0.3em] text-muted-foreground">Manisha R</span>
-            </div>
+          <div className="absolute inset-[10px] overflow-hidden rounded-full animate-pulse-ring">
+            <img
+              src={profileAsset.url}
+              alt="Manisha R — Cybersecurity Engineer & Java Developer"
+              className="h-full w-full object-cover"
+              loading="eager"
+            />
           </div>
         </div>
 
@@ -377,7 +380,16 @@ function Experience() {
               <Briefcase className="h-3.5 w-3.5" /> Internship
             </div>
             <h3 className="mt-2 font-display text-xl font-semibold">Software Development Intern</h3>
-            <p className="mt-1 text-sm text-muted-foreground">AI-enabled security · Java & Web</p>
+            <a
+              href="https://www.linkedin.com/company/yugayatra-retail-opc-private-ltd/posts/"
+              target="_blank"
+              rel="noreferrer"
+              className="mt-1 inline-flex items-center gap-1.5 text-sm font-medium text-[var(--neon-cyan)] transition hover:text-foreground"
+            >
+              YugaYatra Retail (OPC) Private Ltd
+              <ExternalLink className="h-3.5 w-3.5" />
+            </a>
+            <p className="mt-1 text-xs uppercase tracking-widest text-muted-foreground">AI-enabled security · Java & Web</p>
             <ul className="mt-4 space-y-2">
               {highlights.map((h) => (
                 <li key={h} className="flex items-start gap-2.5 text-sm text-foreground/85">
