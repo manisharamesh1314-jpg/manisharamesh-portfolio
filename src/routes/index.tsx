@@ -143,9 +143,10 @@ function Hero() {
             <span className="h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_10px_rgba(52,211,153,0.8)]" />
             Available for Internship · Tamil Nadu, India
           </span>
-          <h1 className="mt-6 font-display font-bold leading-[1.05] tracking-tight text-[clamp(2.25rem,9vw,5.25rem)]">
-            <span className="block whitespace-nowrap neon-text bg-gradient-to-r from-[var(--neon-blue)] via-[var(--neon-purple)] to-[var(--neon-cyan)] bg-clip-text text-transparent">
-              Manisha Rameshbabu
+          <h1 className="mt-6 font-display font-bold leading-[1.05] tracking-tight text-[clamp(2.5rem,10vw,5.5rem)]">
+            <span className="block text-white">Manisha</span>
+            <span className="block neon-text bg-gradient-to-r from-[var(--neon-blue)] via-[var(--neon-purple)] to-[var(--neon-cyan)] bg-clip-text text-transparent">
+              Rameshbabu
             </span>
           </h1>
           <p className="mt-6 max-w-xl font-mono text-[0.7rem] sm:text-sm uppercase tracking-[0.18em] sm:tracking-[0.2em] leading-relaxed text-muted-foreground text-balance">
@@ -247,7 +248,7 @@ function ProfileCard() {
           {orbits.map((o, i) => {
             const rad = (o.angle * Math.PI) / 180;
             // Radius as % of container so it scales with the avatar
-            const r = 48; // ~edge of container
+            const r = 46;
             const x = 50 + r * Math.cos(rad);
             const y = 50 + r * Math.sin(rad);
             return (
@@ -260,9 +261,9 @@ function ProfileCard() {
                   animationDelay: `${-i * 0.6}s`,
                 }}
               >
-                <div className="flex items-center gap-1.5 rounded-full glass px-2 py-1 text-[0.65rem] font-medium text-foreground/90 shadow-[0_4px_20px_-6px_var(--neon-blue)]">
+                <div className="flex items-center gap-1 rounded-full glass px-1.5 py-0.5 sm:px-2 sm:py-1 text-[0.6rem] sm:text-[0.65rem] font-medium text-foreground/90 shadow-[0_4px_20px_-6px_var(--neon-blue)] whitespace-nowrap">
                   <span className="text-[var(--neon-cyan)]">{o.icon}</span>
-                  <span className="hidden sm:inline">{o.label}</span>
+                  <span>{o.label}</span>
                 </div>
               </div>
             );
