@@ -34,14 +34,14 @@ import resumeAsset from "@/assets/resume.pdf.asset.json";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Manisha R — Cybersecurity Engineer & Java Developer" },
+      { title: "R Manisha — Cybersecurity Engineer & Java Developer" },
       {
         name: "description",
         content:
-          "Portfolio of Manisha R — Cybersecurity Engineering student, Java developer, and aspiring full stack engineer building secure, AI-driven software.",
+          "Portfolio of R Manisha — Cybersecurity Engineering student, Java developer, and aspiring full stack engineer building secure, AI-driven software.",
       },
-      { name: "keywords", content: "Manisha R, Cybersecurity, Java Developer, Full Stack, AI Security, Portfolio" },
-      { property: "og:title", content: "Manisha R — Cybersecurity Engineer & Java Developer" },
+      { name: "keywords", content: "R Manisha, Cybersecurity, Java Developer, Full Stack, AI Security, Portfolio" },
+      { property: "og:title", content: "R Manisha — Cybersecurity Engineer & Java Developer" },
       { property: "og:description", content: "Secure, scalable, intelligent software. Available for internships." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -116,7 +116,7 @@ function Nav() {
       <div className={`mx-auto flex max-w-6xl items-center justify-between px-5 ${scrolled ? "glass-strong rounded-2xl" : ""}`} style={scrolled ? { padding: "0.6rem 1rem" } : undefined}>
         <a href="#top" className="flex items-center gap-2 font-display text-lg font-semibold">
           <span className="grid h-8 w-8 place-items-center rounded-lg bg-gradient-to-br from-[var(--neon-blue)] to-[var(--neon-purple)] text-background">M</span>
-          <span className="neon-text">Manisha R</span>
+          <span className="neon-text">R Manisha</span>
         </a>
         <nav className="hidden items-center gap-1 md:flex">
           {links.map(([l, h]) => (
@@ -144,8 +144,8 @@ function Hero() {
             Available for Internship · Tamil Nadu, India
           </span>
           <h1 className="mt-6 font-display text-5xl font-bold leading-[1.05] sm:text-6xl lg:text-7xl">
-            <span className="block text-foreground">MANISHA</span>
-            <span className="block neon-text">RAMESH</span>
+            <span className="block text-foreground">R</span>
+            <span className="block neon-text">MANISHA</span>
           </h1>
           <p className="mt-6 max-w-xl font-mono text-sm uppercase tracking-[0.2em] text-muted-foreground">
             Cybersecurity Engineer · Java Developer · Aspiring Full Stack Developer
@@ -169,7 +169,7 @@ function Hero() {
             </a>
             <a
               href={resumeAsset.url}
-              download="Manisha_Ramesh_Resume.pdf"
+              download="R_Manisha_Resume.pdf"
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center gap-2 rounded-full border border-white/15 px-5 py-3 text-sm font-semibold text-foreground transition hover:border-white/30 hover:bg-white/5"
@@ -235,7 +235,7 @@ function ProfileCard() {
             <div className="absolute inset-[10px] overflow-hidden rounded-full animate-pulse-ring">
               <img
                 src={profileAsset.url}
-                alt="Manisha R — Cybersecurity Engineer & Java Developer"
+                alt="R Manisha — Cybersecurity Engineer & Java Developer"
                 className="h-full w-full object-cover"
                 loading="eager"
               />
@@ -269,7 +269,7 @@ function ProfileCard() {
         </div>
 
         <div className="mt-6 text-center">
-          <h3 className="font-display text-xl font-semibold">Manisha R</h3>
+          <h3 className="font-display text-xl font-semibold">R Manisha</h3>
           <p className="mt-1 flex items-center justify-center gap-1.5 text-sm text-muted-foreground">
             <MapPin className="h-3.5 w-3.5" /> Tamil Nadu, India
           </p>
@@ -823,7 +823,7 @@ function Footer() {
     <footer className="relative z-10 mt-10 border-t border-white/10 px-5 py-10">
       <div className="mx-auto flex max-w-6xl flex-col items-center gap-4 text-center md:flex-row md:justify-between md:text-left">
         <div>
-          <p className="font-display text-base font-semibold">Designed and Developed by <span className="neon-text">Manisha R</span></p>
+          <p className="font-display text-base font-semibold">Designed and Developed by <span className="neon-text">R Manisha</span></p>
           <p className="mt-1 text-xs uppercase tracking-[0.2em] text-muted-foreground">
             Cybersecurity Engineer · Java Developer · Aspiring Full Stack Developer
           </p>
