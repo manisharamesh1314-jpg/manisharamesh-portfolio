@@ -144,9 +144,9 @@ function Hero() {
             Available for Internship · Tamil Nadu, India
           </span>
           <h1 className="mt-6 font-display font-bold leading-[1.05] tracking-tight text-[clamp(2.5rem,10vw,5.5rem)]">
-            <span className="block text-white">Manisha</span>
+            <span className="block text-white">MANISHA</span>
             <span className="block neon-text bg-gradient-to-r from-[var(--neon-blue)] via-[var(--neon-purple)] to-[var(--neon-cyan)] bg-clip-text text-transparent">
-              Rameshbabu
+              RAMESHBABU
             </span>
           </h1>
           <p className="mt-6 max-w-xl font-mono text-[0.7rem] sm:text-sm uppercase tracking-[0.18em] sm:tracking-[0.2em] leading-relaxed text-muted-foreground text-balance">
