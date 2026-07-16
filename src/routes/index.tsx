@@ -248,7 +248,7 @@ function ProfileCard() {
           {orbits.map((o, i) => {
             const rad = (o.angle * Math.PI) / 180;
             // Radius as % of container so it scales with the avatar
-            const r = 48; // ~edge of container
+            const r = 46;
             const x = 50 + r * Math.cos(rad);
             const y = 50 + r * Math.sin(rad);
             return (
@@ -261,9 +261,9 @@ function ProfileCard() {
                   animationDelay: `${-i * 0.6}s`,
                 }}
               >
-                <div className="flex items-center gap-1.5 rounded-full glass px-2 py-1 text-[0.65rem] font-medium text-foreground/90 shadow-[0_4px_20px_-6px_var(--neon-blue)]">
+                <div className="flex items-center gap-1 rounded-full glass px-1.5 py-0.5 sm:px-2 sm:py-1 text-[0.6rem] sm:text-[0.65rem] font-medium text-foreground/90 shadow-[0_4px_20px_-6px_var(--neon-blue)] whitespace-nowrap">
                   <span className="text-[var(--neon-cyan)]">{o.icon}</span>
-                  <span className="hidden sm:inline">{o.label}</span>
+                  <span>{o.label}</span>
                 </div>
               </div>
             );
