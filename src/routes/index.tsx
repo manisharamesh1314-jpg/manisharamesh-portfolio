@@ -434,31 +434,35 @@ function Projects() {
     <Section id="projects" eyebrow="04 — Selected Work" title="Featured Projects">
       <div className="grid gap-6 lg:grid-cols-2">
         <ProjectCard
-          tag="Flagship · AI Security"
-          title="Gatebell.in"
-          subtitle="Smart Security for Residential Complexes"
-          description="AI-enabled security platform featuring facial recognition, anomaly detection, predictive alerts, visitor management, role-based access control, multi-factor authentication, encryption, and security monitoring."
+          tag="Flagship · AI Healthcare"
+          title="MedMind – AI-Powered Smart Healthcare Assistant"
+          subtitle="Secure full-stack AI healthcare platform"
+          description="MedMind is a full-stack AI-powered healthcare platform that helps users access intelligent healthcare assistance through a secure, modern web application. It focuses on JWT authentication, a scalable backend, and an intuitive UX while following secure software development practices."
           features={[
-            "Facial Recognition",
-            "Visitor Access Management",
-            "Predictive Alerts",
-            "Anomaly Detection",
-            "MFA",
-            "Encryption",
-            "Role-Based Access",
-            "Security Monitoring",
+            "React",
+            "TypeScript",
+            "FastAPI",
+            "Python",
+            "PostgreSQL",
+            "SQLAlchemy",
+            "JWT Auth",
+            "Tailwind CSS",
+            "Vercel",
           ]}
           accent="from-[var(--neon-blue)] to-[var(--neon-purple)]"
           icon={<Shield className="h-6 w-6" />}
+          status="🚧 Currently in Development"
+          liveUrl="https://med-mind-black.vercel.app"
         />
         <ProjectCard
           tag="Web · Security Tool"
           title="Password Strength Evaluator"
           subtitle="Analyze complexity & guide stronger passwords"
-          description="A web application that analyzes password complexity and provides security feedback to help users create stronger, safer passwords."
+          description="A cybersecurity-focused web application that analyzes password strength and provides real-time feedback based on password complexity. Currently enhancing the UI/UX, refining strength analysis, and adding more advanced security validation features."
           features={["HTML", "CSS", "JavaScript"]}
           accent="from-[var(--neon-cyan)] to-[var(--neon-blue)]"
           icon={<KeyRound className="h-6 w-6" />}
+          status="🚧 Currently Enhancing"
         />
       </div>
     </Section>
@@ -466,9 +470,10 @@ function Projects() {
 }
 
 function ProjectCard({
-  tag, title, subtitle, description, features, accent, icon,
+  tag, title, subtitle, description, features, accent, icon, status, liveUrl, githubUrl,
 }: {
   tag: string; title: string; subtitle: string; description: string; features: string[]; accent: string; icon: React.ReactNode;
+  status?: string; liveUrl?: string; githubUrl?: string;
 }) {
   return (
     <article className="group relative overflow-hidden rounded-3xl glass-strong p-7 transition hover:-translate-y-1">
@@ -481,6 +486,15 @@ function ProjectCard({
       </div>
       <h3 className="mt-5 font-display text-2xl font-semibold">{title}</h3>
       <p className="mt-1 text-sm text-[var(--neon-cyan)]">{subtitle}</p>
+      {status && (
+        <div className="mt-3 inline-flex items-center gap-2 rounded-full border border-[var(--neon-purple)]/40 bg-[var(--neon-purple)]/10 px-3 py-1 text-xs font-medium text-[var(--neon-cyan)]">
+          <span className="relative flex h-2 w-2">
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[var(--neon-cyan)] opacity-70" />
+            <span className="relative inline-flex h-2 w-2 rounded-full bg-[var(--neon-cyan)]" />
+          </span>
+          {status}
+        </div>
+      )}
       <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{description}</p>
       <div className="mt-5 flex flex-wrap gap-2">
         {features.map((f) => (
@@ -489,13 +503,38 @@ function ProjectCard({
           </span>
         ))}
       </div>
-      <div className="mt-6 flex items-center gap-2 text-sm text-foreground/70">
-        <ExternalLink className="h-4 w-4" />
-        <span className="font-mono">Case study available on request</span>
+      <div className="mt-6 flex flex-wrap items-center gap-3 text-sm">
+        {liveUrl && (
+          <a
+            href={liveUrl}
+            target="_blank"
+            rel="noreferrer"
+            className={`inline-flex items-center gap-2 rounded-xl bg-gradient-to-r ${accent} px-4 py-2 font-medium text-background transition hover:opacity-90`}
+          >
+            <ExternalLink className="h-4 w-4" /> Live Demo
+          </a>
+        )}
+        {githubUrl && (
+          <a
+            href={githubUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-2 rounded-xl border border-white/15 bg-white/5 px-4 py-2 font-medium text-foreground/90 transition hover:bg-white/10"
+          >
+            <Github className="h-4 w-4" /> GitHub
+          </a>
+        )}
+        {!liveUrl && !githubUrl && (
+          <div className="flex items-center gap-2 text-foreground/70">
+            <ExternalLink className="h-4 w-4" />
+            <span className="font-mono">Case study available on request</span>
+          </div>
+        )}
       </div>
     </article>
   );
 }
+
 
 /* ---------- Achievements ---------- */
 function Achievements() {
