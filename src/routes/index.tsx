@@ -143,12 +143,13 @@ function Hero() {
             <span className="h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_10px_rgba(52,211,153,0.8)]" />
             Available for Internship · Tamil Nadu, India
           </span>
-          <h1 className="mt-6 font-display text-5xl font-bold leading-[1.05] sm:text-6xl lg:text-7xl">
-            <span className="block text-foreground">R</span>
-            <span className="block neon-text">MANISHA</span>
+          <h1 className="mt-6 font-display font-bold leading-[1.05] tracking-tight text-[clamp(2.25rem,9vw,5.25rem)]">
+            <span className="block whitespace-nowrap neon-text bg-gradient-to-r from-[var(--neon-blue)] via-[var(--neon-purple)] to-[var(--neon-cyan)] bg-clip-text text-transparent">
+              Manisha Rameshbabu
+            </span>
           </h1>
-          <p className="mt-6 max-w-xl font-mono text-sm uppercase tracking-[0.2em] text-muted-foreground">
-            Cybersecurity Engineer · Java Developer · Aspiring Full Stack Developer
+          <p className="mt-6 max-w-xl font-mono text-[0.7rem] sm:text-sm uppercase tracking-[0.18em] sm:tracking-[0.2em] leading-relaxed text-muted-foreground text-balance">
+            Cybersecurity Engineer <span className="text-[var(--neon-cyan)]">·</span> Java Developer <span className="text-[var(--neon-cyan)]">·</span> Aspiring Full Stack Developer
           </p>
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
             Building secure, scalable, and intelligent software solutions through modern development practices,
