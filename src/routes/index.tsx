@@ -144,8 +144,8 @@ function Hero() {
             Available for Internship · Tamil Nadu, India
           </span>
           <h1 className="mt-6 font-display text-5xl font-bold leading-[1.05] sm:text-6xl lg:text-7xl">
-            <span className="block text-foreground">MANISHA</span>
-            <span className="block neon-text">RAMESH</span>
+            <span className="block text-foreground">R</span>
+            <span className="block neon-text">MANISHA</span>
           </h1>
           <p className="mt-6 max-w-xl font-mono text-sm uppercase tracking-[0.2em] text-muted-foreground">
             Cybersecurity Engineer · Java Developer · Aspiring Full Stack Developer
