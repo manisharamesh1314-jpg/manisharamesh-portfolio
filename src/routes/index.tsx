@@ -415,46 +415,52 @@ function Skills() {
 /* ---------- Experience ---------- */
 function Experience() {
   const highlights = [
-    "Developed AI-enabled security solutions",
-    "Worked on facial recognition systems",
-    "Implemented anomaly detection concepts",
-    "Applied Zero Trust security principles",
-    "Used encryption-based security measures",
-    "Designed role-based access control systems",
-    "Enhanced secure authentication workflows",
+    "Worked on an AI-enabled security solution involving facial recognition, anomaly detection, and predictive security alerts.",
+    "Applied Zero Trust principles to strengthen application security.",
+    "Implemented security measures involving authentication and encryption.",
+    "Worked with role-based workflows and access control for different application users.",
+    "Contributed to security-focused application development and logging/monitoring concepts.",
   ];
   return (
     <Section id="experience" eyebrow="03 — Journey" title="Experience">
-      <div className="relative mx-auto max-w-3xl">
-        <div className="absolute left-4 top-0 bottom-0 w-px bg-gradient-to-b from-[var(--neon-blue)] via-[var(--neon-purple)] to-transparent md:left-1/2" />
-        <div className="relative pl-12 md:pl-0">
-          <div className="absolute left-2.5 top-3 h-3 w-3 rounded-full bg-[var(--neon-purple)] glow-purple md:left-[calc(50%-6px)]" />
-          <div className="glass-strong rounded-2xl p-6 md:ml-[55%]">
-            <div className="flex items-center gap-2 text-xs uppercase tracking-widest text-[var(--neon-cyan)]">
-              <Briefcase className="h-3.5 w-3.5" /> Internship
+      <div className="mx-auto max-w-3xl">
+        <article className="glass-strong overflow-hidden rounded-3xl p-6 sm:p-8 transition hover:border-white/25">
+          <div className="flex flex-wrap items-start justify-between gap-4">
+            <div className="min-w-0">
+              <div className="flex items-center gap-2 text-[0.7rem] uppercase tracking-[0.2em] text-[var(--neon-cyan)]">
+                <Briefcase className="h-3.5 w-3.5" /> Internship
+              </div>
+              <h3 className="mt-3 font-display text-xl sm:text-2xl font-semibold leading-snug">
+                Software Development Intern
+              </h3>
+              <a
+                href="https://www.linkedin.com/company/yugayatra-retail-opc-private-ltd/posts/"
+                target="_blank"
+                rel="noreferrer"
+                className="mt-1.5 inline-flex items-center gap-1.5 text-sm font-medium text-[var(--neon-cyan)] transition hover:text-foreground"
+              >
+                Yuga Yatra Retail (OPC) Pvt. Ltd.
+                <ExternalLink className="h-3.5 w-3.5" />
+              </a>
             </div>
-            <h3 className="mt-2 font-display text-xl font-semibold">Software Development Intern</h3>
-            <a
-              href="https://www.linkedin.com/company/yugayatra-retail-opc-private-ltd/posts/"
-              target="_blank"
-              rel="noreferrer"
-              className="mt-1 inline-flex items-center gap-1.5 text-sm font-medium text-[var(--neon-cyan)] transition hover:text-foreground"
-            >
-              YugaYatra Retail (OPC) Private Ltd
-              <ExternalLink className="h-3.5 w-3.5" />
-            </a>
-            <p className="mt-1 text-xs uppercase tracking-widest text-muted-foreground">AI-enabled security · Java & Web</p>
-            <ul className="mt-4 space-y-2">
-              {highlights.map((h) => (
-                <li key={h} className="flex items-start gap-2.5 text-sm text-foreground/85">
-                  <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[var(--neon-cyan)]" />
-                  <span>{h}</span>
-                </li>
-              ))}
-            </ul>
+            <span className="rounded-full border border-white/15 bg-white/[0.06] px-3 py-1 text-[0.65rem] uppercase tracking-[0.18em] text-muted-foreground">
+              Secure Application Development
+            </span>
           </div>
-        </div>
+
+          <div className="mt-6 h-px w-full bg-gradient-to-r from-[var(--neon-blue)]/40 via-[var(--neon-purple)]/30 to-transparent" />
+
+          <ul className="mt-6 space-y-3">
+            {highlights.map((h) => (
+              <li key={h} className="flex items-start gap-3 text-sm leading-relaxed text-foreground/85">
+                <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[var(--neon-cyan)]" />
+                <span>{h}</span>
+              </li>
+            ))}
+          </ul>
+        </article>
       </div>
+
     </Section>
   );
 }
