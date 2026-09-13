@@ -34,17 +34,18 @@ import resumeAsset from "@/assets/resume.pdf.asset.json";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "R Manisha — Cybersecurity Engineer & Java Developer" },
+      { title: "Manisha Rameshbabu — Cybersecurity Engineer & Software Developer" },
       {
         name: "description",
         content:
-          "Portfolio of R Manisha — Cybersecurity Engineering student, Java developer, and aspiring full stack engineer building secure, AI-driven software.",
+          "Portfolio of Manisha Rameshbabu — Cybersecurity Engineering student and software developer building secure, scalable full-stack applications.",
       },
-      { name: "keywords", content: "R Manisha, Cybersecurity, Java Developer, Full Stack, AI Security, Portfolio" },
-      { property: "og:title", content: "R Manisha — Cybersecurity Engineer & Java Developer" },
-      { property: "og:description", content: "Secure, scalable, intelligent software. Available for internships." },
+      { name: "keywords", content: "Manisha Rameshbabu, Cybersecurity, Software Developer, Full Stack, Java, Python, Portfolio" },
+      { property: "og:title", content: "Manisha Rameshbabu — Cybersecurity Engineer & Software Developer" },
+      { property: "og:description", content: "Secure, scalable, user-focused software. Available for internships." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+
     ],
     links: [
       { rel: "canonical", href: "/" },
@@ -105,10 +106,13 @@ function Nav() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
   const links = [
+    ["Home", "#top"],
     ["About", "#about"],
     ["Skills", "#skills"],
     ["Experience", "#experience"],
     ["Projects", "#projects"],
+    ["Achievements", "#achievements"],
+    ["Certifications", "#certifications"],
     ["Contact", "#contact"],
   ];
   return (
@@ -116,15 +120,17 @@ function Nav() {
       <div className={`mx-auto flex max-w-6xl items-center justify-between px-5 ${scrolled ? "glass-strong rounded-2xl" : ""}`} style={scrolled ? { padding: "0.6rem 1rem" } : undefined}>
         <a href="#top" className="flex items-center gap-2 font-display text-lg font-semibold">
           <span className="grid h-8 w-8 place-items-center rounded-lg bg-gradient-to-br from-[var(--neon-blue)] to-[var(--neon-purple)] text-background">M</span>
-          <span className="neon-text">R Manisha</span>
+          <span className="neon-text">Manisha Rameshbabu</span>
+
         </a>
-        <nav className="hidden items-center gap-1 md:flex">
+        <nav className="hidden items-center gap-0.5 lg:flex">
           {links.map(([l, h]) => (
-            <a key={l} href={h} className="rounded-full px-4 py-2 text-sm text-muted-foreground transition hover:bg-white/5 hover:text-foreground">
+            <a key={l} href={h} className="rounded-full px-3 py-2 text-sm text-muted-foreground transition hover:bg-white/5 hover:text-foreground">
               {l}
             </a>
           ))}
         </nav>
+
         <a href="#contact" className="hidden md:inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[var(--neon-blue)] to-[var(--neon-purple)] px-4 py-2 text-sm font-medium text-background transition hover:opacity-90">
           Hire me <ArrowRight className="h-4 w-4" />
         </a>
@@ -149,13 +155,14 @@ function Hero() {
               RAMESHBABU
             </span>
           </h1>
-          <p className="mt-6 max-w-xl font-mono text-[0.7rem] sm:text-sm uppercase tracking-[0.18em] sm:tracking-[0.2em] leading-relaxed text-muted-foreground text-balance">
-            Cybersecurity Engineer <span className="text-[var(--neon-cyan)]">·</span> Java Developer <span className="text-[var(--neon-cyan)]">·</span> Aspiring Full Stack Developer
+          <p className="mt-6 max-w-xl font-mono text-[0.7rem] sm:text-sm uppercase tracking-[0.14em] sm:tracking-[0.18em] leading-relaxed text-muted-foreground text-balance">
+            Cybersecurity Engineer <span className="text-[var(--neon-cyan)]">·</span> Software Developer <span className="text-[var(--neon-cyan)]">·</span> Full-Stack Developer
           </p>
-          <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
-            Building secure, scalable, and intelligent software solutions through modern development practices,
-            cybersecurity principles, and AI-driven technologies.
+          <p className="mt-6 max-w-xl text-base sm:text-lg leading-relaxed text-muted-foreground">
+            Engineering secure, scalable, and user-focused software solutions by combining full-stack development,
+            cybersecurity principles, and modern backend technologies.
           </p>
+
           <div className="mt-8 flex flex-wrap gap-3">
             <a
               href="#projects"
@@ -171,7 +178,7 @@ function Hero() {
             </a>
             <a
               href={resumeAsset.url}
-              download="R_Manisha_Resume.pdf"
+              download="Manisha_Rameshbabu_Resume.pdf"
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center gap-2 rounded-full border border-white/15 px-5 py-3 text-sm font-semibold text-foreground transition hover:border-white/30 hover:bg-white/5"
@@ -211,16 +218,16 @@ function ProfileCard() {
   const orbits = [
     { label: "Java", icon: <FileCode2 className="h-3.5 w-3.5" />, angle: -90 },
     { label: "Security", icon: <Shield className="h-3.5 w-3.5" />, angle: -30 },
-    { label: "AI", icon: <BrainCircuit className="h-3.5 w-3.5" />, angle: 30 },
-    { label: "JS", icon: <Code2 className="h-3.5 w-3.5" />, angle: 90 },
-    { label: "Cloud", icon: <Cloud className="h-3.5 w-3.5" />, angle: 150 },
+    { label: "Python", icon: <BrainCircuit className="h-3.5 w-3.5" />, angle: 30 },
+    { label: "React", icon: <Code2 className="h-3.5 w-3.5" />, angle: 90 },
+    { label: "SQL", icon: <Cloud className="h-3.5 w-3.5" />, angle: 150 },
     { label: "Git", icon: <Github className="h-3.5 w-3.5" />, angle: 210 },
   ];
   const stats = [
-    { k: "CGPA", v: "8.59" },
-    { k: "Focus", v: "Secure Dev" },
-    { k: "Domain", v: "AI & Cyber" },
-    { k: "Status", v: "Open to Intern" },
+    { k: "CGPA", v: "8.53" },
+    { k: "Focus", v: "Secure Software" },
+    { k: "Domain", v: "Cybersecurity" },
+    { k: "Status", v: "Open to Internships" },
   ];
   return (
     <div className="relative mx-auto w-full max-w-md animate-fade-up" style={{ animationDelay: "0.15s" }}>
@@ -237,7 +244,7 @@ function ProfileCard() {
             <div className="absolute inset-[10px] overflow-hidden rounded-full animate-pulse-ring">
               <img
                 src={profileAsset.url}
-                alt="R Manisha — Cybersecurity Engineer & Java Developer"
+                alt="Manisha Rameshbabu — Cybersecurity Engineer & Software Developer"
                 className="h-full w-full object-cover"
                 loading="eager"
               />
@@ -271,9 +278,9 @@ function ProfileCard() {
         </div>
 
         <div className="mt-6 text-center">
-          <h3 className="font-display text-xl font-semibold">R Manisha</h3>
+          <h3 className="font-display text-xl font-semibold">Manisha Rameshbabu</h3>
           <p className="mt-1 flex items-center justify-center gap-1.5 text-sm text-muted-foreground">
-            <MapPin className="h-3.5 w-3.5" /> Tamil Nadu, India
+            <MapPin className="h-3.5 w-3.5" /> Salem, Tamil Nadu, India
           </p>
         </div>
 
@@ -296,36 +303,43 @@ function About() {
     {
       icon: <GraduationCap className="h-5 w-5" />,
       title: "Cybersecurity Engineering Student",
-      body: "Strong foundation in software engineering principles, web technologies, and modern security concepts.",
+      body: "Strong foundation in cybersecurity, software engineering principles, secure development, and problem-solving.",
     },
     {
       icon: <Code2 className="h-5 w-5" />,
-      title: "Java & Web Developer",
-      body: "Passionate about clean, scalable code — from Java backends to responsive front-ends.",
+      title: "Software & Full-Stack Developer",
+      body: "Building applications using Java, Python, JavaScript, React, FastAPI, REST APIs, SQL, and PostgreSQL.",
     },
     {
-      icon: <BrainCircuit className="h-5 w-5" />,
-      title: "AI-Powered Security",
-      body: "Exploring AI-driven security solutions: facial recognition, anomaly detection, predictive alerts.",
+      icon: <Shield className="h-5 w-5" />,
+      title: "Security-Focused Development",
+      body: "Interested in secure authentication, access control, encryption, Zero Trust principles, and AI-driven security solutions.",
     },
   ];
   return (
     <Section id="about" eyebrow="01 — Profile" title="About Me">
       <div className="grid gap-8 lg:grid-cols-[1fr_1.2fr] lg:items-start">
         <div className="glass-strong rounded-3xl p-7">
-          <p className="text-lg leading-relaxed text-foreground/90">
-            I'm a <span className="neon-text font-semibold">Cybersecurity Engineering</span> student with a CGPA of{" "}
-            <span className="font-display font-semibold text-foreground">8.59</span> and a strong passion for software development,
-            cybersecurity, AI-powered security systems, and modern web technologies.
+          <p className="text-base sm:text-lg leading-relaxed text-foreground/90">
+            I'm a <span className="neon-text font-semibold">Cybersecurity Engineering</span> student (CGPA{" "}
+            <span className="font-display font-semibold text-foreground">8.53 / 10</span>) with a strong foundation in
+            software development, cybersecurity, and modern web technologies. I enjoy building reliable, secure, and
+            user-focused applications that solve practical problems.
           </p>
           <p className="mt-4 leading-relaxed text-muted-foreground">
-            I enjoy building secure, scalable, and user-friendly applications that solve real-world problems —
-            blending strong development fundamentals with security-first thinking.
+            My development experience spans Java, Python, JavaScript, React, FastAPI, REST APIs, SQL, and PostgreSQL.
+            I also apply cybersecurity concepts such as secure authentication, access control, encryption, and Zero
+            Trust principles when designing applications.
+          </p>
+          <p className="mt-4 leading-relaxed text-muted-foreground">
+            I'm particularly interested in software engineering, secure application development, and AI-powered
+            security solutions.
           </p>
           <div className="mt-6 flex flex-wrap gap-2">
-            {["Secure Development", "AI in Security", "Java", "Web Tech", "Zero Trust"].map((t) => (
+            {["Secure Development", "Java", "Python", "React", "FastAPI", "PostgreSQL", "Zero Trust"].map((t) => (
               <span key={t} className="chip">{t}</span>
             ))}
+
           </div>
         </div>
         <div className="grid gap-4">
@@ -351,11 +365,26 @@ function About() {
 /* ---------- Skills ---------- */
 function Skills() {
   const groups: { title: string; icon: React.ReactNode; items: string[] }[] = [
-    { title: "Programming", icon: <Code2 className="h-4 w-4" />, items: ["Java", "JavaScript", "HTML", "CSS"] },
-    { title: "Development", icon: <FileCode2 className="h-4 w-4" />, items: ["Web Development", "Responsive Design", "SDLC"] },
-    { title: "Cybersecurity", icon: <Shield className="h-4 w-4" />, items: ["Zero Trust", "Authentication", "Encryption", "Access Control"] },
-    { title: "AI Concepts", icon: <BrainCircuit className="h-4 w-4" />, items: ["Facial Recognition", "Anomaly Detection", "Predictive Alerts"] },
-    { title: "Tools", icon: <Github className="h-4 w-4" />, items: ["Git", "GitHub", "VS Code"] },
+    { title: "Programming", icon: <Code2 className="h-4 w-4" />, items: ["Java", "Python", "JavaScript"] },
+    { title: "Web Development", icon: <FileCode2 className="h-4 w-4" />, items: ["HTML5", "CSS3", "React", "Tailwind CSS"] },
+    { title: "Backend & APIs", icon: <Cloud className="h-4 w-4" />, items: ["FastAPI", "REST APIs"] },
+    { title: "Databases", icon: <Shield className="h-4 w-4" />, items: ["SQL", "PostgreSQL", "SQLAlchemy"] },
+    { title: "Tools", icon: <Github className="h-4 w-4" />, items: ["Git", "GitHub"] },
+    { title: "Core Concepts", icon: <BrainCircuit className="h-4 w-4" />, items: ["OOP", "SDLC", "Debugging", "Testing", "DSA (Basic)"] },
+    {
+      title: "Professional Skills",
+      icon: <Sparkles className="h-4 w-4" />,
+      items: [
+        "Problem Solving",
+        "Critical Thinking",
+        "Team Collaboration",
+        "Communication",
+        "Time Management",
+        "Adaptability",
+        "Analytical Thinking",
+        "Quick Learning",
+      ],
+    },
   ];
   return (
     <Section id="skills" eyebrow="02 — Toolkit" title="Skills & Technologies">
@@ -386,46 +415,52 @@ function Skills() {
 /* ---------- Experience ---------- */
 function Experience() {
   const highlights = [
-    "Developed AI-enabled security solutions",
-    "Worked on facial recognition systems",
-    "Implemented anomaly detection concepts",
-    "Applied Zero Trust security principles",
-    "Used encryption-based security measures",
-    "Designed role-based access control systems",
-    "Enhanced secure authentication workflows",
+    "Worked on an AI-enabled security solution involving facial recognition, anomaly detection, and predictive security alerts.",
+    "Applied Zero Trust principles to strengthen application security.",
+    "Implemented security measures involving authentication and encryption.",
+    "Worked with role-based workflows and access control for different application users.",
+    "Contributed to security-focused application development and logging/monitoring concepts.",
   ];
   return (
     <Section id="experience" eyebrow="03 — Journey" title="Experience">
-      <div className="relative mx-auto max-w-3xl">
-        <div className="absolute left-4 top-0 bottom-0 w-px bg-gradient-to-b from-[var(--neon-blue)] via-[var(--neon-purple)] to-transparent md:left-1/2" />
-        <div className="relative pl-12 md:pl-0">
-          <div className="absolute left-2.5 top-3 h-3 w-3 rounded-full bg-[var(--neon-purple)] glow-purple md:left-[calc(50%-6px)]" />
-          <div className="glass-strong rounded-2xl p-6 md:ml-[55%]">
-            <div className="flex items-center gap-2 text-xs uppercase tracking-widest text-[var(--neon-cyan)]">
-              <Briefcase className="h-3.5 w-3.5" /> Internship
+      <div className="mx-auto max-w-3xl">
+        <article className="glass-strong overflow-hidden rounded-3xl p-6 sm:p-8 transition hover:border-white/25">
+          <div className="flex flex-wrap items-start justify-between gap-4">
+            <div className="min-w-0">
+              <div className="flex items-center gap-2 text-[0.7rem] uppercase tracking-[0.2em] text-[var(--neon-cyan)]">
+                <Briefcase className="h-3.5 w-3.5" /> Internship
+              </div>
+              <h3 className="mt-3 font-display text-xl sm:text-2xl font-semibold leading-snug">
+                Software Development Intern
+              </h3>
+              <a
+                href="https://www.linkedin.com/company/yugayatra-retail-opc-private-ltd/posts/"
+                target="_blank"
+                rel="noreferrer"
+                className="mt-1.5 inline-flex items-center gap-1.5 text-sm font-medium text-[var(--neon-cyan)] transition hover:text-foreground"
+              >
+                Yuga Yatra Retail (OPC) Pvt. Ltd.
+                <ExternalLink className="h-3.5 w-3.5" />
+              </a>
             </div>
-            <h3 className="mt-2 font-display text-xl font-semibold">Software Development Intern</h3>
-            <a
-              href="https://www.linkedin.com/company/yugayatra-retail-opc-private-ltd/posts/"
-              target="_blank"
-              rel="noreferrer"
-              className="mt-1 inline-flex items-center gap-1.5 text-sm font-medium text-[var(--neon-cyan)] transition hover:text-foreground"
-            >
-              YugaYatra Retail (OPC) Private Ltd
-              <ExternalLink className="h-3.5 w-3.5" />
-            </a>
-            <p className="mt-1 text-xs uppercase tracking-widest text-muted-foreground">AI-enabled security · Java & Web</p>
-            <ul className="mt-4 space-y-2">
-              {highlights.map((h) => (
-                <li key={h} className="flex items-start gap-2.5 text-sm text-foreground/85">
-                  <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[var(--neon-cyan)]" />
-                  <span>{h}</span>
-                </li>
-              ))}
-            </ul>
+            <span className="rounded-full border border-white/15 bg-white/[0.06] px-3 py-1 text-[0.65rem] uppercase tracking-[0.18em] text-muted-foreground">
+              Secure Application Development
+            </span>
           </div>
-        </div>
+
+          <div className="mt-6 h-px w-full bg-gradient-to-r from-[var(--neon-blue)]/40 via-[var(--neon-purple)]/30 to-transparent" />
+
+          <ul className="mt-6 space-y-3">
+            {highlights.map((h) => (
+              <li key={h} className="flex items-start gap-3 text-sm leading-relaxed text-foreground/85">
+                <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[var(--neon-cyan)]" />
+                <span>{h}</span>
+              </li>
+            ))}
+          </ul>
+        </article>
       </div>
+
     </Section>
   );
 }
@@ -436,58 +471,62 @@ function Projects() {
     <Section id="projects" eyebrow="04 — Selected Work" title="Featured Projects">
       <div className="grid gap-6 lg:grid-cols-2">
         <ProjectCard
-          tag="Flagship · AI Healthcare"
-          title="MedMind – AI-Powered Smart Healthcare Assistant"
-          subtitle="Secure full-stack AI healthcare platform"
-          description="MedMind is a full-stack AI-powered healthcare platform that helps users access intelligent healthcare assistance through a secure, modern web application. It focuses on JWT authentication, a scalable backend, and an intuitive UX while following secure software development practices."
+          featured
+          tag="Flagship Project"
+          title="MedMind — AI-Powered Healthcare Management System"
+          subtitle="Full-Stack Healthcare Management Platform"
+          description="Developed a full-stack healthcare management platform designed to securely manage users' medical information. The system includes user registration, authentication, medical-data management, REST APIs, and database operations with a focus on secure and reliable application development."
           features={[
             "React",
-            "TypeScript",
-            "FastAPI",
-            "Python",
-            "PostgreSQL",
-            "SQLAlchemy",
-            "JWT Auth",
+            "Vite",
             "Tailwind CSS",
-            "Vercel",
+            "Python",
+            "FastAPI",
+            "SQLAlchemy",
+            "PostgreSQL",
           ]}
           accent="from-[var(--neon-blue)] to-[var(--neon-purple)]"
           icon={<Shield className="h-6 w-6" />}
-          status="🚧 Currently in Development"
           liveUrl="https://med-mind-black.vercel.app"
         />
         <ProjectCard
-          tag="Web · Security Tool"
+          tag="Cybersecurity Web Tool"
           title="Password Strength Evaluator"
-          subtitle="Analyze complexity & guide stronger passwords"
-          description="A cybersecurity-focused web application that analyzes password strength and provides real-time feedback based on password complexity. Currently enhancing the UI/UX, refining strength analysis, and adding more advanced security validation features."
-          features={["HTML", "CSS", "JavaScript"]}
+          subtitle="Cybersecurity Web Tool"
+          description="Developing a web-based cybersecurity tool that evaluates password strength based on password length, character diversity, and common security weaknesses, with the goal of improving password security awareness."
+          features={["HTML5", "CSS3", "JavaScript"]}
           accent="from-[var(--neon-cyan)] to-[var(--neon-blue)]"
           icon={<KeyRound className="h-6 w-6" />}
-          status="🚧 Currently Enhancing"
+          status="Under Development"
         />
+
       </div>
     </Section>
   );
 }
 
 function ProjectCard({
-  tag, title, subtitle, description, features, accent, icon, status, liveUrl, githubUrl,
+  tag, title, subtitle, description, features, accent, icon, status, liveUrl, githubUrl, featured,
 }: {
   tag: string; title: string; subtitle: string; description: string; features: string[]; accent: string; icon: React.ReactNode;
-  status?: string; liveUrl?: string; githubUrl?: string;
+  status?: string; liveUrl?: string; githubUrl?: string; featured?: boolean;
 }) {
   return (
-    <article className="group relative overflow-hidden rounded-3xl glass-strong p-7 transition hover:-translate-y-1">
+    <article
+      className={`group relative overflow-hidden rounded-3xl glass-strong p-6 sm:p-8 transition duration-300 hover:-translate-y-1 hover:border-white/25 ${
+        featured ? "lg:col-span-2 border-white/20" : ""
+      }`}
+    >
       <div className={`pointer-events-none absolute -top-32 -right-32 h-64 w-64 rounded-full bg-gradient-to-br ${accent} opacity-20 blur-3xl transition group-hover:opacity-40`} />
       <div className="flex items-start justify-between gap-4">
-        <div className={`grid h-12 w-12 place-items-center rounded-2xl bg-gradient-to-br ${accent} text-background`}>
+        <div className={`grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-gradient-to-br ${accent} text-background`}>
           {icon}
         </div>
         <span className="chip">{tag}</span>
       </div>
-      <h3 className="mt-5 font-display text-2xl font-semibold">{title}</h3>
-      <p className="mt-1 text-sm text-[var(--neon-cyan)]">{subtitle}</p>
+      <h3 className={`mt-5 font-display font-semibold leading-tight ${featured ? "text-2xl sm:text-3xl" : "text-xl sm:text-2xl"}`}>{title}</h3>
+      <p className="mt-1.5 text-sm text-[var(--neon-cyan)]">{subtitle}</p>
+
       {status && (
         <div className="mt-3 inline-flex items-center gap-2 rounded-full border border-[var(--neon-purple)]/40 bg-[var(--neon-purple)]/10 px-3 py-1 text-xs font-medium text-[var(--neon-cyan)]">
           <span className="relative flex h-2 w-2">
@@ -548,78 +587,61 @@ function Achievements() {
     description: string;
     badge: string;
     accent: "blue" | "purple" | "cyan";
+    highlight?: boolean;
   }[] = [
     {
       icon: <Trophy className="h-5 w-5" />,
-      title: "First Prize — Technical Paper Presentation",
+      title: "Smart India Hackathon (SIH) 2026 — Round 2",
+      date: "September 2026",
+      location: "Dhanalakshmi Srinivasan Engineering College",
+      description:
+        "Advanced to Round 2 of Smart India Hackathon 2026 as part of a shortlisted team, competing among 45 selected teams.",
+      badge: "Round 2 · Top 45 Teams",
+      accent: "purple",
+      highlight: true,
+    },
+    {
+      icon: <Award className="h-5 w-5" />,
+      title: "First Prize — Paper Presentation",
       date: "2025",
       location: "Sengunthar Engineering College, Tamil Nadu",
       description:
-        "Secured First Prize in a Technical Paper Presentation competition, demonstrating strong technical knowledge, research abilities, and presentation skills.",
+        "Secured First Prize in a technical paper presentation, demonstrating strong technical knowledge, research ability, and presentation skills.",
       badge: "Winner",
-      accent: "purple",
+      accent: "blue",
     },
     {
       icon: <BrainCircuit className="h-5 w-5" />,
       title: "Generative AI Paper Presentation — SARAYU-2K25",
-      date: "25–26 September 2025",
-      location: "Rover Engineering College, Tamil Nadu",
+      date: "September 2025",
+      location: "National Level Technical Symposium",
       description:
-        "Presented a technical paper on Generative AI at the National Level Technical Symposium SARAYU-2K25, showcasing emerging AI technologies and applications.",
+        "Presented a technical paper on Generative AI at the national level technical symposium SARAYU-2K25.",
       badge: "National Symposium",
+      accent: "cyan",
+    },
+    {
+      icon: <Rocket className="h-5 w-5" />,
+      title: "3-Hour Hackathon",
+      date: "September 2025",
+      location: "Nandha College of Technology, Tamil Nadu",
+      description:
+        "Built a password strength evaluation web tool within a 3-hour hackathon, focusing on password security awareness.",
+      badge: "Hackathon",
       accent: "blue",
     },
     {
       icon: <Sparkles className="h-5 w-5" />,
       title: "Cyberia-2K25 National Level Technical Symposium",
-      date: "18 September 2025",
-      location: "Rover Engineering College, Tamil Nadu",
-      description:
-        "Competed in technical events including TecScribe, BrandHunt, and MemeCraft — enhancing creativity, communication, and problem-solving skills.",
-      badge: "Participant",
-      accent: "cyan",
-    },
-    {
-      icon: <Award className="h-5 w-5" />,
-      title: "SAWIT AI Learnathon — GUVI",
-      date: "21–22 September 2024",
-      location: "Organized by GUVI",
-      description:
-        "Successfully completed the SAWIT AI Learnathon, gaining practical exposure to Artificial Intelligence concepts, tools, and real-world applications.",
-      badge: "Completed",
-      accent: "purple",
-    },
-    {
-      icon: <Eye className="h-5 w-5" />,
-      title: "Data Science Decoded Workshop by Google",
-      date: "12–13 April 2025",
-      location: "Madras Institute of Technology (Anna University), Chennai",
-      description:
-        "Attended Google's Data Science Decoded workshop during Samhita'25, exploring modern data science techniques, analytics, and industry applications.",
-      badge: "Google Workshop",
-      accent: "blue",
-    },
-    {
-      icon: <Rocket className="h-5 w-5" />,
-      title: "National Level Hackathon — Password Strength Evaluator",
       date: "2025",
-      location: "Nandha College of Technology, Tamil Nadu",
+      location: "Participated in TecScribe, BrandHunt and MemeCraft",
       description:
-        "Built a Password Strength Evaluator (HTML/CSS/JS) in a 3-hour hackathon — analyzing password complexity with real-time security feedback to promote cybersecurity awareness.",
-      badge: "Hackathon",
-      accent: "cyan",
-    },
-    {
-      icon: <TrendingUp className="h-5 w-5" />,
-      title: "Technical Growth & Continuous Learning",
-      date: "2024 — Present",
-      location: "Across symposiums, hackathons & workshops",
-      description:
-        "Actively participating in hackathons, symposiums, workshops, and project development — strengthening cybersecurity, web development, teamwork, innovation, leadership, and technical communication.",
-      badge: "Ongoing",
+        "Competed in technical and creative events including TecScribe, BrandHunt, and MemeCraft.",
+      badge: "Participant",
       accent: "purple",
     },
   ];
+
 
   const accentMap = {
     blue: "from-[var(--neon-blue)] to-[var(--neon-cyan)]",
