@@ -303,36 +303,43 @@ function About() {
     {
       icon: <GraduationCap className="h-5 w-5" />,
       title: "Cybersecurity Engineering Student",
-      body: "Strong foundation in software engineering principles, web technologies, and modern security concepts.",
+      body: "Strong foundation in cybersecurity, software engineering principles, secure development, and problem-solving.",
     },
     {
       icon: <Code2 className="h-5 w-5" />,
-      title: "Java & Web Developer",
-      body: "Passionate about clean, scalable code — from Java backends to responsive front-ends.",
+      title: "Software & Full-Stack Developer",
+      body: "Building applications using Java, Python, JavaScript, React, FastAPI, REST APIs, SQL, and PostgreSQL.",
     },
     {
-      icon: <BrainCircuit className="h-5 w-5" />,
-      title: "AI-Powered Security",
-      body: "Exploring AI-driven security solutions: facial recognition, anomaly detection, predictive alerts.",
+      icon: <Shield className="h-5 w-5" />,
+      title: "Security-Focused Development",
+      body: "Interested in secure authentication, access control, encryption, Zero Trust principles, and AI-driven security solutions.",
     },
   ];
   return (
     <Section id="about" eyebrow="01 — Profile" title="About Me">
       <div className="grid gap-8 lg:grid-cols-[1fr_1.2fr] lg:items-start">
         <div className="glass-strong rounded-3xl p-7">
-          <p className="text-lg leading-relaxed text-foreground/90">
-            I'm a <span className="neon-text font-semibold">Cybersecurity Engineering</span> student with a CGPA of{" "}
-            <span className="font-display font-semibold text-foreground">8.59</span> and a strong passion for software development,
-            cybersecurity, AI-powered security systems, and modern web technologies.
+          <p className="text-base sm:text-lg leading-relaxed text-foreground/90">
+            I'm a <span className="neon-text font-semibold">Cybersecurity Engineering</span> student (CGPA{" "}
+            <span className="font-display font-semibold text-foreground">8.53 / 10</span>) with a strong foundation in
+            software development, cybersecurity, and modern web technologies. I enjoy building reliable, secure, and
+            user-focused applications that solve practical problems.
           </p>
           <p className="mt-4 leading-relaxed text-muted-foreground">
-            I enjoy building secure, scalable, and user-friendly applications that solve real-world problems —
-            blending strong development fundamentals with security-first thinking.
+            My development experience spans Java, Python, JavaScript, React, FastAPI, REST APIs, SQL, and PostgreSQL.
+            I also apply cybersecurity concepts such as secure authentication, access control, encryption, and Zero
+            Trust principles when designing applications.
+          </p>
+          <p className="mt-4 leading-relaxed text-muted-foreground">
+            I'm particularly interested in software engineering, secure application development, and AI-powered
+            security solutions.
           </p>
           <div className="mt-6 flex flex-wrap gap-2">
-            {["Secure Development", "AI in Security", "Java", "Web Tech", "Zero Trust"].map((t) => (
+            {["Secure Development", "Java", "Python", "React", "FastAPI", "PostgreSQL", "Zero Trust"].map((t) => (
               <span key={t} className="chip">{t}</span>
             ))}
+
           </div>
         </div>
         <div className="grid gap-4">
