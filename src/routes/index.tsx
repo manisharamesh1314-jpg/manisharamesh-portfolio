@@ -587,78 +587,61 @@ function Achievements() {
     description: string;
     badge: string;
     accent: "blue" | "purple" | "cyan";
+    highlight?: boolean;
   }[] = [
     {
       icon: <Trophy className="h-5 w-5" />,
-      title: "First Prize — Technical Paper Presentation",
+      title: "Smart India Hackathon (SIH) 2026 — Round 2",
+      date: "September 2026",
+      location: "Dhanalakshmi Srinivasan Engineering College",
+      description:
+        "Advanced to Round 2 of Smart India Hackathon 2026 as part of a shortlisted team, competing among 45 selected teams.",
+      badge: "Round 2 · Top 45 Teams",
+      accent: "purple",
+      highlight: true,
+    },
+    {
+      icon: <Award className="h-5 w-5" />,
+      title: "First Prize — Paper Presentation",
       date: "2025",
       location: "Sengunthar Engineering College, Tamil Nadu",
       description:
-        "Secured First Prize in a Technical Paper Presentation competition, demonstrating strong technical knowledge, research abilities, and presentation skills.",
+        "Secured First Prize in a technical paper presentation, demonstrating strong technical knowledge, research ability, and presentation skills.",
       badge: "Winner",
-      accent: "purple",
+      accent: "blue",
     },
     {
       icon: <BrainCircuit className="h-5 w-5" />,
       title: "Generative AI Paper Presentation — SARAYU-2K25",
-      date: "25–26 September 2025",
-      location: "Rover Engineering College, Tamil Nadu",
+      date: "September 2025",
+      location: "National Level Technical Symposium",
       description:
-        "Presented a technical paper on Generative AI at the National Level Technical Symposium SARAYU-2K25, showcasing emerging AI technologies and applications.",
+        "Presented a technical paper on Generative AI at the national level technical symposium SARAYU-2K25.",
       badge: "National Symposium",
+      accent: "cyan",
+    },
+    {
+      icon: <Rocket className="h-5 w-5" />,
+      title: "3-Hour Hackathon",
+      date: "September 2025",
+      location: "Nandha College of Technology, Tamil Nadu",
+      description:
+        "Built a password strength evaluation web tool within a 3-hour hackathon, focusing on password security awareness.",
+      badge: "Hackathon",
       accent: "blue",
     },
     {
       icon: <Sparkles className="h-5 w-5" />,
       title: "Cyberia-2K25 National Level Technical Symposium",
-      date: "18 September 2025",
-      location: "Rover Engineering College, Tamil Nadu",
-      description:
-        "Competed in technical events including TecScribe, BrandHunt, and MemeCraft — enhancing creativity, communication, and problem-solving skills.",
-      badge: "Participant",
-      accent: "cyan",
-    },
-    {
-      icon: <Award className="h-5 w-5" />,
-      title: "SAWIT AI Learnathon — GUVI",
-      date: "21–22 September 2024",
-      location: "Organized by GUVI",
-      description:
-        "Successfully completed the SAWIT AI Learnathon, gaining practical exposure to Artificial Intelligence concepts, tools, and real-world applications.",
-      badge: "Completed",
-      accent: "purple",
-    },
-    {
-      icon: <Eye className="h-5 w-5" />,
-      title: "Data Science Decoded Workshop by Google",
-      date: "12–13 April 2025",
-      location: "Madras Institute of Technology (Anna University), Chennai",
-      description:
-        "Attended Google's Data Science Decoded workshop during Samhita'25, exploring modern data science techniques, analytics, and industry applications.",
-      badge: "Google Workshop",
-      accent: "blue",
-    },
-    {
-      icon: <Rocket className="h-5 w-5" />,
-      title: "National Level Hackathon — Password Strength Evaluator",
       date: "2025",
-      location: "Nandha College of Technology, Tamil Nadu",
+      location: "Participated in TecScribe, BrandHunt and MemeCraft",
       description:
-        "Built a Password Strength Evaluator (HTML/CSS/JS) in a 3-hour hackathon — analyzing password complexity with real-time security feedback to promote cybersecurity awareness.",
-      badge: "Hackathon",
-      accent: "cyan",
-    },
-    {
-      icon: <TrendingUp className="h-5 w-5" />,
-      title: "Technical Growth & Continuous Learning",
-      date: "2024 — Present",
-      location: "Across symposiums, hackathons & workshops",
-      description:
-        "Actively participating in hackathons, symposiums, workshops, and project development — strengthening cybersecurity, web development, teamwork, innovation, leadership, and technical communication.",
-      badge: "Ongoing",
+        "Competed in technical and creative events including TecScribe, BrandHunt, and MemeCraft.",
+      badge: "Participant",
       accent: "purple",
     },
   ];
+
 
   const accentMap = {
     blue: "from-[var(--neon-blue)] to-[var(--neon-cyan)]",
