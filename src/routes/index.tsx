@@ -365,11 +365,26 @@ function About() {
 /* ---------- Skills ---------- */
 function Skills() {
   const groups: { title: string; icon: React.ReactNode; items: string[] }[] = [
-    { title: "Programming", icon: <Code2 className="h-4 w-4" />, items: ["Java", "JavaScript", "HTML", "CSS"] },
-    { title: "Development", icon: <FileCode2 className="h-4 w-4" />, items: ["Web Development", "Responsive Design", "SDLC"] },
-    { title: "Cybersecurity", icon: <Shield className="h-4 w-4" />, items: ["Zero Trust", "Authentication", "Encryption", "Access Control"] },
-    { title: "AI Concepts", icon: <BrainCircuit className="h-4 w-4" />, items: ["Facial Recognition", "Anomaly Detection", "Predictive Alerts"] },
-    { title: "Tools", icon: <Github className="h-4 w-4" />, items: ["Git", "GitHub", "VS Code"] },
+    { title: "Programming", icon: <Code2 className="h-4 w-4" />, items: ["Java", "Python", "JavaScript"] },
+    { title: "Web Development", icon: <FileCode2 className="h-4 w-4" />, items: ["HTML5", "CSS3", "React", "Tailwind CSS"] },
+    { title: "Backend & APIs", icon: <Cloud className="h-4 w-4" />, items: ["FastAPI", "REST APIs"] },
+    { title: "Databases", icon: <Shield className="h-4 w-4" />, items: ["SQL", "PostgreSQL", "SQLAlchemy"] },
+    { title: "Tools", icon: <Github className="h-4 w-4" />, items: ["Git", "GitHub"] },
+    { title: "Core Concepts", icon: <BrainCircuit className="h-4 w-4" />, items: ["OOP", "SDLC", "Debugging", "Testing", "DSA (Basic)"] },
+    {
+      title: "Professional Skills",
+      icon: <Sparkles className="h-4 w-4" />,
+      items: [
+        "Problem Solving",
+        "Critical Thinking",
+        "Team Collaboration",
+        "Communication",
+        "Time Management",
+        "Adaptability",
+        "Analytical Thinking",
+        "Quick Learning",
+      ],
+    },
   ];
   return (
     <Section id="skills" eyebrow="02 — Toolkit" title="Skills & Technologies">
