@@ -506,22 +506,27 @@ function Projects() {
 }
 
 function ProjectCard({
-  tag, title, subtitle, description, features, accent, icon, status, liveUrl, githubUrl,
+  tag, title, subtitle, description, features, accent, icon, status, liveUrl, githubUrl, featured,
 }: {
   tag: string; title: string; subtitle: string; description: string; features: string[]; accent: string; icon: React.ReactNode;
-  status?: string; liveUrl?: string; githubUrl?: string;
+  status?: string; liveUrl?: string; githubUrl?: string; featured?: boolean;
 }) {
   return (
-    <article className="group relative overflow-hidden rounded-3xl glass-strong p-7 transition hover:-translate-y-1">
+    <article
+      className={`group relative overflow-hidden rounded-3xl glass-strong p-6 sm:p-8 transition duration-300 hover:-translate-y-1 hover:border-white/25 ${
+        featured ? "lg:col-span-2 border-white/20" : ""
+      }`}
+    >
       <div className={`pointer-events-none absolute -top-32 -right-32 h-64 w-64 rounded-full bg-gradient-to-br ${accent} opacity-20 blur-3xl transition group-hover:opacity-40`} />
       <div className="flex items-start justify-between gap-4">
-        <div className={`grid h-12 w-12 place-items-center rounded-2xl bg-gradient-to-br ${accent} text-background`}>
+        <div className={`grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-gradient-to-br ${accent} text-background`}>
           {icon}
         </div>
         <span className="chip">{tag}</span>
       </div>
-      <h3 className="mt-5 font-display text-2xl font-semibold">{title}</h3>
-      <p className="mt-1 text-sm text-[var(--neon-cyan)]">{subtitle}</p>
+      <h3 className={`mt-5 font-display font-semibold leading-tight ${featured ? "text-2xl sm:text-3xl" : "text-xl sm:text-2xl"}`}>{title}</h3>
+      <p className="mt-1.5 text-sm text-[var(--neon-cyan)]">{subtitle}</p>
+
       {status && (
         <div className="mt-3 inline-flex items-center gap-2 rounded-full border border-[var(--neon-purple)]/40 bg-[var(--neon-purple)]/10 px-3 py-1 text-xs font-medium text-[var(--neon-cyan)]">
           <span className="relative flex h-2 w-2">
