@@ -34,17 +34,18 @@ import resumeAsset from "@/assets/resume.pdf.asset.json";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "R Manisha — Cybersecurity Engineer & Java Developer" },
+      { title: "Manisha Rameshbabu — Cybersecurity Engineer & Software Developer" },
       {
         name: "description",
         content:
-          "Portfolio of R Manisha — Cybersecurity Engineering student, Java developer, and aspiring full stack engineer building secure, AI-driven software.",
+          "Portfolio of Manisha Rameshbabu — Cybersecurity Engineering student and software developer building secure, scalable full-stack applications.",
       },
-      { name: "keywords", content: "R Manisha, Cybersecurity, Java Developer, Full Stack, AI Security, Portfolio" },
-      { property: "og:title", content: "R Manisha — Cybersecurity Engineer & Java Developer" },
-      { property: "og:description", content: "Secure, scalable, intelligent software. Available for internships." },
+      { name: "keywords", content: "Manisha Rameshbabu, Cybersecurity, Software Developer, Full Stack, Java, Python, Portfolio" },
+      { property: "og:title", content: "Manisha Rameshbabu — Cybersecurity Engineer & Software Developer" },
+      { property: "og:description", content: "Secure, scalable, user-focused software. Available for internships." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+
     ],
     links: [
       { rel: "canonical", href: "/" },
@@ -105,10 +106,13 @@ function Nav() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
   const links = [
+    ["Home", "#top"],
     ["About", "#about"],
     ["Skills", "#skills"],
     ["Experience", "#experience"],
     ["Projects", "#projects"],
+    ["Achievements", "#achievements"],
+    ["Certifications", "#certifications"],
     ["Contact", "#contact"],
   ];
   return (
@@ -116,15 +120,17 @@ function Nav() {
       <div className={`mx-auto flex max-w-6xl items-center justify-between px-5 ${scrolled ? "glass-strong rounded-2xl" : ""}`} style={scrolled ? { padding: "0.6rem 1rem" } : undefined}>
         <a href="#top" className="flex items-center gap-2 font-display text-lg font-semibold">
           <span className="grid h-8 w-8 place-items-center rounded-lg bg-gradient-to-br from-[var(--neon-blue)] to-[var(--neon-purple)] text-background">M</span>
-          <span className="neon-text">R Manisha</span>
+          <span className="neon-text">Manisha Rameshbabu</span>
+
         </a>
-        <nav className="hidden items-center gap-1 md:flex">
+        <nav className="hidden items-center gap-0.5 lg:flex">
           {links.map(([l, h]) => (
-            <a key={l} href={h} className="rounded-full px-4 py-2 text-sm text-muted-foreground transition hover:bg-white/5 hover:text-foreground">
+            <a key={l} href={h} className="rounded-full px-3 py-2 text-sm text-muted-foreground transition hover:bg-white/5 hover:text-foreground">
               {l}
             </a>
           ))}
         </nav>
+
         <a href="#contact" className="hidden md:inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[var(--neon-blue)] to-[var(--neon-purple)] px-4 py-2 text-sm font-medium text-background transition hover:opacity-90">
           Hire me <ArrowRight className="h-4 w-4" />
         </a>
@@ -149,13 +155,14 @@ function Hero() {
               RAMESHBABU
             </span>
           </h1>
-          <p className="mt-6 max-w-xl font-mono text-[0.7rem] sm:text-sm uppercase tracking-[0.18em] sm:tracking-[0.2em] leading-relaxed text-muted-foreground text-balance">
-            Cybersecurity Engineer <span className="text-[var(--neon-cyan)]">·</span> Java Developer <span className="text-[var(--neon-cyan)]">·</span> Aspiring Full Stack Developer
+          <p className="mt-6 max-w-xl font-mono text-[0.7rem] sm:text-sm uppercase tracking-[0.14em] sm:tracking-[0.18em] leading-relaxed text-muted-foreground text-balance">
+            Cybersecurity Engineer <span className="text-[var(--neon-cyan)]">·</span> Software Developer <span className="text-[var(--neon-cyan)]">·</span> Full-Stack Developer
           </p>
-          <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
-            Building secure, scalable, and intelligent software solutions through modern development practices,
-            cybersecurity principles, and AI-driven technologies.
+          <p className="mt-6 max-w-xl text-base sm:text-lg leading-relaxed text-muted-foreground">
+            Engineering secure, scalable, and user-focused software solutions by combining full-stack development,
+            cybersecurity principles, and modern backend technologies.
           </p>
+
           <div className="mt-8 flex flex-wrap gap-3">
             <a
               href="#projects"
@@ -171,7 +178,7 @@ function Hero() {
             </a>
             <a
               href={resumeAsset.url}
-              download="R_Manisha_Resume.pdf"
+              download="Manisha_Rameshbabu_Resume.pdf"
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center gap-2 rounded-full border border-white/15 px-5 py-3 text-sm font-semibold text-foreground transition hover:border-white/30 hover:bg-white/5"
@@ -211,16 +218,16 @@ function ProfileCard() {
   const orbits = [
     { label: "Java", icon: <FileCode2 className="h-3.5 w-3.5" />, angle: -90 },
     { label: "Security", icon: <Shield className="h-3.5 w-3.5" />, angle: -30 },
-    { label: "AI", icon: <BrainCircuit className="h-3.5 w-3.5" />, angle: 30 },
-    { label: "JS", icon: <Code2 className="h-3.5 w-3.5" />, angle: 90 },
-    { label: "Cloud", icon: <Cloud className="h-3.5 w-3.5" />, angle: 150 },
+    { label: "Python", icon: <BrainCircuit className="h-3.5 w-3.5" />, angle: 30 },
+    { label: "React", icon: <Code2 className="h-3.5 w-3.5" />, angle: 90 },
+    { label: "SQL", icon: <Cloud className="h-3.5 w-3.5" />, angle: 150 },
     { label: "Git", icon: <Github className="h-3.5 w-3.5" />, angle: 210 },
   ];
   const stats = [
-    { k: "CGPA", v: "8.59" },
-    { k: "Focus", v: "Secure Dev" },
-    { k: "Domain", v: "AI & Cyber" },
-    { k: "Status", v: "Open to Intern" },
+    { k: "CGPA", v: "8.53" },
+    { k: "Focus", v: "Secure Software" },
+    { k: "Domain", v: "Cybersecurity" },
+    { k: "Status", v: "Open to Internships" },
   ];
   return (
     <div className="relative mx-auto w-full max-w-md animate-fade-up" style={{ animationDelay: "0.15s" }}>
@@ -237,7 +244,7 @@ function ProfileCard() {
             <div className="absolute inset-[10px] overflow-hidden rounded-full animate-pulse-ring">
               <img
                 src={profileAsset.url}
-                alt="R Manisha — Cybersecurity Engineer & Java Developer"
+                alt="Manisha Rameshbabu — Cybersecurity Engineer & Software Developer"
                 className="h-full w-full object-cover"
                 loading="eager"
               />
@@ -271,9 +278,9 @@ function ProfileCard() {
         </div>
 
         <div className="mt-6 text-center">
-          <h3 className="font-display text-xl font-semibold">R Manisha</h3>
+          <h3 className="font-display text-xl font-semibold">Manisha Rameshbabu</h3>
           <p className="mt-1 flex items-center justify-center gap-1.5 text-sm text-muted-foreground">
-            <MapPin className="h-3.5 w-3.5" /> Tamil Nadu, India
+            <MapPin className="h-3.5 w-3.5" /> Salem, Tamil Nadu, India
           </p>
         </div>
 
