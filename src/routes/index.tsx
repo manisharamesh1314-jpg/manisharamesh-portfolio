@@ -471,36 +471,35 @@ function Projects() {
     <Section id="projects" eyebrow="04 — Selected Work" title="Featured Projects">
       <div className="grid gap-6 lg:grid-cols-2">
         <ProjectCard
-          tag="Flagship · AI Healthcare"
-          title="MedMind – AI-Powered Smart Healthcare Assistant"
-          subtitle="Secure full-stack AI healthcare platform"
-          description="MedMind is a full-stack AI-powered healthcare platform that helps users access intelligent healthcare assistance through a secure, modern web application. It focuses on JWT authentication, a scalable backend, and an intuitive UX while following secure software development practices."
+          featured
+          tag="Flagship Project"
+          title="MedMind — AI-Powered Healthcare Management System"
+          subtitle="Full-Stack Healthcare Management Platform"
+          description="Developed a full-stack healthcare management platform designed to securely manage users' medical information. The system includes user registration, authentication, medical-data management, REST APIs, and database operations with a focus on secure and reliable application development."
           features={[
             "React",
-            "TypeScript",
-            "FastAPI",
-            "Python",
-            "PostgreSQL",
-            "SQLAlchemy",
-            "JWT Auth",
+            "Vite",
             "Tailwind CSS",
-            "Vercel",
+            "Python",
+            "FastAPI",
+            "SQLAlchemy",
+            "PostgreSQL",
           ]}
           accent="from-[var(--neon-blue)] to-[var(--neon-purple)]"
           icon={<Shield className="h-6 w-6" />}
-          status="🚧 Currently in Development"
           liveUrl="https://med-mind-black.vercel.app"
         />
         <ProjectCard
-          tag="Web · Security Tool"
+          tag="Cybersecurity Web Tool"
           title="Password Strength Evaluator"
-          subtitle="Analyze complexity & guide stronger passwords"
-          description="A cybersecurity-focused web application that analyzes password strength and provides real-time feedback based on password complexity. Currently enhancing the UI/UX, refining strength analysis, and adding more advanced security validation features."
-          features={["HTML", "CSS", "JavaScript"]}
+          subtitle="Cybersecurity Web Tool"
+          description="Developing a web-based cybersecurity tool that evaluates password strength based on password length, character diversity, and common security weaknesses, with the goal of improving password security awareness."
+          features={["HTML5", "CSS3", "JavaScript"]}
           accent="from-[var(--neon-cyan)] to-[var(--neon-blue)]"
           icon={<KeyRound className="h-6 w-6" />}
-          status="🚧 Currently Enhancing"
+          status="Under Development"
         />
+
       </div>
     </Section>
   );
